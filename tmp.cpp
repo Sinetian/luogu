@@ -9,7 +9,10 @@ inline bool check(int x)
         if (tot + a[i] <= x)
             tot += a[i];
         else
-            tot = a[i], num++;
+        {
+            tot = a[i];
+            num++;
+        }
     }
     return num >= m;
 }
@@ -17,7 +20,11 @@ int main()
 {
     cin >> n >> m;
     for (int i = 1; i <= n; i++)
-        cin >> a[i], l = max(l, a[i]), r += a[i];
+    {
+        cin >> a[i];
+        l = max(l, a[i]);
+        r += a[i];
+    }
     while (l <= r)
     {
         mid = l + r >> 1;
