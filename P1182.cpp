@@ -5,12 +5,13 @@
 */
 #include <iostream>
 using namespace std;
+int n;
 bool chk(int x)
 {
 
 }
 int main()
 {
-
+    cin >> n;
     return 0;
 }
