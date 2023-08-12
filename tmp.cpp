@@ -1,11 +1,25 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
 int a[15], b[15];
 void swapBIG(int a[], int b[])
 {
 	int len = max(a[0], b[0]);
 	for (int i = 1; i <= len; i++)
-        swap(b[i], a[i]);
+    {
+        if(i <= a[0]) swap(a[i], b[i]);
+        else
+        {
+            a[0]++;
+            b[0]--;
+            swap(a[i], b[i]);
+        }
+    }
+    int lena = a[0], lenb = b[0];
+    while(a[lena] == 0 && lena > 1) lena--;
+    while(b[lenb] == 0 && lenb > 1) lenb--;
+    a[0] = lena;
+    b[0] = lenb;
 }
 // 读入
 void readBIG(string s, int a[])
