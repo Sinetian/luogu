@@ -4,29 +4,25 @@ using namespace std;
 int a[15], b[15];
 void swapBIG(int a[], int b[])
 {
-	int len = max(a[0], b[0]);
-	for (int i = 1; i <= len; i++)
+    for (int i = 1; i <= n; i++)
     {
-        if(i <= a[0]) swap(a[i], b[i]);
-        else
-        {
-            a[0]++;
-            b[0]--;
-            swap(a[i], b[i]);
-        }
+        if (x < h[i])
+            return false;
+        t[i - 1] = (x - h[i]) / s[i];
     }
-    int lena = a[0], lenb = b[0];
-    while(a[lena] == 0 && lena > 1) lena--;
-    while(b[lenb] == 0 && lenb > 1) lenb--;
-    a[0] = lena;
-    b[0] = lenb;
+    sort(t, t + n);
+    for (int i = 0; i < n; i++)
+        if (t[i] < i)
+            return false;
+    return true;
 }
 // 读入
 void readBIG(string s, int a[])
 {
-	int len = s.size();
-	for(int i = 1; i <= len; i++) a[i] = s[len - i] - '0';
-	a[0] = len;
+    int len = s.size();
+    for (int i = 1; i <= len; i++)
+        a[i] = s[len - i] - '0';
+    a[0] = len;
 }
 // 输出
 void printBIG(int a[])
