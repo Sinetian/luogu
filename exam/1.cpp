@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string.h>
 using namespace std;
+//快速幂模版
 long long fastCal(long long a, long long b, long long p)
 {
 	long long mul = 1;
