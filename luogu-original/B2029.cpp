@@ -1,15 +1,13 @@
 #include <iostream>
+#include <algorithm>
+#include <math.h>
 using namespace std;
-const double Pi = 3.14159;
+const double PI = 3.1415926;
+double r, h, b;
 int main()
 {
-    int r, h, v, ans;
-    cin >> h >> r;
-    v = Pi * r * r * h;
-    if (20000 % (int)v != 0)
-        ans = 20000 / (int)v + 1;
-    else
-        ans = 20000 / (int)v;
-    cout << ans << endl;
+    cin >> r >> h;
+    b = 20000 / (PI * r * r * h);
+    cout << ceil(b) << endl;
     return 0;
 }
